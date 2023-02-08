@@ -6,15 +6,17 @@ window.addEventListener('DOMContentLoaded', () => {
     const slider = new MainSlider({btns: '.next', container: '.page'});
     slider.render();
 
+    // showUpSlider
     const showUpSlider = new MiniSlider({
         container: '.showup__content-slider',
         prev: '.showup__prev',
         next: '.showup__next',
-        activeClass: 'card-active',
-        animate: true
-    });
+        activeClass: '.card-active',
+        animate: true,
+    })
     showUpSlider.init();
 
+    // modulesSlider
     const modulesSlider = new MiniSlider({
         container: '.modules__content-slider',
         prev: '.modules__info-btns .slick-prev',
@@ -22,15 +24,16 @@ window.addEventListener('DOMContentLoaded', () => {
         activeClass: 'card-active',
         animate: true,
         autoplay: true
-    });
+    })
     modulesSlider.init();
 
+    // feedSlider
     const feedSlider = new MiniSlider({
         container: '.feed__slider',
         prev: '.feed__slider .slick-prev',
         next: '.feed__slider .slick-next',
-        activeClass: 'feed__item-active'
-    });
+        activeClass: 'feed__item-active',
+    })
     feedSlider.init();
 
     const player = new VideoPlayer('.showup .play', '.overlay');
