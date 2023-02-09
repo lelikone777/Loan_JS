@@ -1,10 +1,20 @@
 import MainSlider from './modules/slider/slider-main';
 import MiniSlider from './modules/slider/slider-mini';
 import VideoPlayer from './modules/playVideo';
+import Difference from './modules/difference';
+import Form from './modules/form';
 
 window.addEventListener('DOMContentLoaded', () => {
     const slider = new MainSlider({btns: '.next', container: '.page'});
     slider.render();
+
+    const modulePageSlider = new MiniSlider ({
+       container: '.moduleapp',
+        btns: '.next'
+    });
+    modulePageSlider.render();
+
+
 
     // showUpSlider
     const showUpSlider = new MiniSlider({
@@ -21,9 +31,9 @@ window.addEventListener('DOMContentLoaded', () => {
         container: '.modules__content-slider',
         prev: '.modules__info-btns .slick-prev',
         next: '.modules__info-btns .slick-next',
-        activeClass: 'card-active',
+        activeClass: '.card-active',
         animate: true,
-        autoplay: true
+        autoplay: true,
     })
     modulesSlider.init();
 
@@ -36,6 +46,9 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     feedSlider.init();
 
-    const player = new VideoPlayer('.showup .play', '.overlay');
-    player.init();
+    new VideoPlayer('.showup .play', '.overlay').init();
+    new VideoPlayer().init();
+
+    new Difference('.officerold', '.officernew', '.officer__card-item').init();
+    new Form('.form').init();
 });
